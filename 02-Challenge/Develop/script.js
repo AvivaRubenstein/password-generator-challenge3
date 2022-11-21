@@ -1,8 +1,8 @@
 var passwordLength;
-var lowercase;
-var uppercase;
-var numeric;
-var specialChar;
+var hasLowercase;
+var hasUppercase;
+var hasNumeric;
+var hasSpecialChar;
 var lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercaseLetters = ["A", "B" ,"C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -24,31 +24,31 @@ function generatePassword() {
   }
 
   function chooseCharType() {
-    lowercase = confirm("Should the password include lowercase letters?");
-    uppercase = confirm("Should the password include uppercase letters?");
-    numeric = confirm("Should the password include numbers?");
-    specialChar = confirm("Should the password include special characters?");
+    hasLowercase = confirm("Should the password include lowercase letters?");
+    hasUppercase = confirm("Should the password include uppercase letters?");
+    hasNumeric = confirm("Should the password include numbers?");
+    hasSpecialChar = confirm("Should the password include special characters?");
 
   }
   chooseCharType();
 //if the user doesn't select ANY character type, they must repeat until they select at least one.
-  while (!lowercase && !uppercase && !numeric && !specialChar) {
+  while (!hasLowercase && !hasUppercase && !hasNumeric && !hasSpecialChar) {
     alert("You must select at least one character type.  Please try again.");
     chooseCharType();
   }
 
   //The empty combinedCharArray will add in each type of character the user selected to use by concatenating in the 
   //array(s) which contain that character type.
-  if (lowercase) {
+  if (hasLowercase) {
     combinedCharArray = combinedCharArray.concat(lowercaseLetters);
   } 
-  if (uppercase) {
+  if (hasUppercase) {
     combinedCharArray = combinedCharArray.concat(uppercaseLetters);
   }
-  if (numeric) {
+  if (hasNumeric) {
     combinedCharArray = combinedCharArray.concat(numbers);
   }
-  if (specialChar) {
+  if (hasSpecialChar) {
     combinedCharArray = combinedCharArray.concat(symbols);
   }
 
@@ -60,7 +60,7 @@ function generatePassword() {
     //the newest character will then be added as the next character in the password string.
     var index = Math.floor (Math.random() * combinedCharArray.length);
     var newChar = combinedCharArray[index];
-    generatedPassword = generatedPassword + newChar;
+    generatedPassword += newChar;
   }
 return generatedPassword;
 }
