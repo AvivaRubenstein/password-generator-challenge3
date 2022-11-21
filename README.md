@@ -11,7 +11,7 @@ Site URL: https://avivarubenstein.github.io/password-generator-challenge3/
 ## Usage
 
 To use the password generator, follow the window prompts to choose what will go into your random password.
-    ![site Screenshot](assets/Screenshot.png)
+    ![site Screenshot](/02-Challenge/Assets/Screenshot.png)
   
 
 ## Credits
