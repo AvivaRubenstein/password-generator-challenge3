@@ -6,7 +6,7 @@ This project is a random password generator.  It collects information from the u
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Site URL: https://avivarubenstein.github.io/password-generator-challenge3/ 
 
 ## Usage
 
